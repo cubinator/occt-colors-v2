@@ -10,7 +10,7 @@ This mod is a [BepInEx](https://docs.bepinex.dev/index.html "BepInEx.dev") plugi
 1. Backup your save games located in `PC Building Simulator\Saves`.
 2. If not installed already, install the mod loader [BepInEx 5.4.19](https://github.com/BepInEx/BepInEx/releases "BepInEx Releases - Github.com") or newer. Just download the ZIP file (x86 or x64, depending on your system) and unpack it into the installation directory of PCBS. BepInEx provides more details [here](https://docs.bepinex.dev/articles/user_guide/installation/index.html "BepInEx Installation - BepInEx.dev").
 3. Run PCBS at least once after installing BepInEx, so that BepInEx can create its configuration file. If BepInEx was installed properly, it should have created a `BepInEx.cfg` file in `PC Building Simulator\BepInEx\config`.
-4. Download the latest release of this mod from [Github](https://www.github.com/cubinator/occt-colors-v2/release "OCCT Colors v2 Releases - Github.com") or NexusMods (TBA) <!-- TODO: Add releases --> and unpack the ZIP file into the installation directory of PCBS.
+4. Download the latest release of this mod from [Github](https://www.github.com/cubinator/occt-colors-v2/releases "OCCT Colors v2 Releases - Github.com") or NexusMods (TBA) <!-- TODO: Add releases --> and unpack the ZIP file into the installation directory of PCBS.
 5. Enjoy :)
 
 ## Configuration

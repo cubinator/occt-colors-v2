@@ -2,8 +2,8 @@
 using System.IO;   // Path
 using System.Linq; // IEnumerable::ToArray
 
+// [UnityEngine.CoreModule.dll]
 // [UnityEngine.dll]
-// [UnityEngine.CoreModules.dll]
 using UnityEngine; // Color, Color32
 
 // [Assembly-CSharp-firstpass.dll]
@@ -19,20 +19,21 @@ using HarmonyLib;  // HarmonyPatch, MethodType
 
 
 using System.Reflection;
-[assembly: AssemblyDescriptionAttribute("BepInEx plugin for PC Building Simulator to change the font colors in the OCCT app")]
-[assembly: AssemblyTitleAttribute("OCCT Colors")]
+[assembly: AssemblyTitleAttribute(OCCTColors.OCCTColors.ModName)]
 [assembly: AssemblyVersionAttribute(OCCTColors.OCCTColors.ModVersion)]
+[assembly: AssemblyDescriptionAttribute(
+    "BepInEx plugin for PC Building Simulator to change the font colors in the OCCT app")]
 
 
 namespace OCCTColors
 {
+    [BepInPlugin(ModGuid, ModName, ModVersion)]
     [BepInProcess("PCBS.exe")]
-    [BepInPlugin(ModGuid, ModName, "0.9.9.9")]
     internal class OCCTColors : BaseUnityPlugin
     {
-        private const string ModGuid = "com.bepinex.cubi.pcbs.occtcolors";
-        private const string ModName = "OCCT Colors";
-        public const string ModVersion = "2.0.0";
+        public const string ModGuid = "com.bepinex.cubi.pcbs.occtcolors";
+        public const string ModName = "OCCT Colors";
+        public const string ModVersion = "2.0.1";
 
         public new static readonly ManualLogSource Logger
             = BepInEx.Logging.Logger.CreateLogSource(OCCTColors.ModName);
@@ -76,7 +77,7 @@ namespace OCCTColors
                 );
 
                 // TODO Implement more color parsers, e.g. #00ccff, #0cf, cyan
-                string[] channel_strs = (
+                string[] channelStrs = (
                     from channel in setting.Value.Split(',')
                     select channel.Trim()
                 ).ToArray();
@@ -84,9 +85,9 @@ namespace OCCTColors
                 try
                 {
                     OCCTColors.Colors[idx] = (Color)new Color32(
-                        byte.Parse(channel_strs[0]),
-                        byte.Parse(channel_strs[1]),
-                        byte.Parse(channel_strs[2]),
+                        byte.Parse(channelStrs[0]),
+                        byte.Parse(channelStrs[1]),
+                        byte.Parse(channelStrs[2]),
                         0xFF
                     );
                 }
